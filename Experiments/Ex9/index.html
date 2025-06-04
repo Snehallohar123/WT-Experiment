@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Car Racing Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f8ff;
+        }
+
+        .track {
+            position: relative;
+            margin: 20px auto;
+            width: 90%;
+            height: 320px;
+            background: #eee;
+            border: 2px dashed #aaa;
+            overflow: hidden;
+        }
+
+        .car {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 60px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #car1 { top: 10px; }
+        #car2 { top: 90px; }
+        #car3 { top: 170px; }
+        #car4 { top: 250px; }
+
+
+        button {
+            padding: 10px 20px;
+            margin: 20px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        #stopRace {
+            background: #dc3545;
+        }
+
+        #stopRace:hover {
+            background: #c82333;
+        }
+
+        #winner {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff4500;
+            font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body>
+
+<h1>🏁 4-Car Racing Game 🏁</h1>
+
+<div class="track">
+    <img src="race.jpg" class="car" id="car1" alt="Car 1">
+    <img src="race.jpg" class="car" id="car2" alt="Car 2">
+    <img src="race.jpg" class="car" id="car3" alt="Car 3">
+    <img src="race.jpg" class="car" id="car4" alt="Car 4">
+</div>
+
+<button id="startRace">Start Race</button>
+<button id="stopRace">Stop Race</button>
+
+<div id="winner"></div>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    let raceOver = false;
+
+    function resetRace() {
+        $('#car1, #car2, #car3, #car4').css("left", "0");
+        $('#winner').text('');
+        raceOver = false;
+    }
+
+    $('#startRace').click(function(){
+        resetRace();
+
+        let trackWidth = $('.track').width() - 120; // Track width minus car width
+
+        let carTimes = {
+            'car1': Math.floor(Math.random() * 5000) + 3000,
+            'car2': Math.floor(Math.random() * 5000) + 3000,
+            'car3': Math.floor(Math.random() * 5000) + 3000,
+            'car4': Math.floor(Math.random() * 5000) + 3000
+        };
+
+        $.each(carTimes, function(carId, time) {
+            $('#' + carId).animate({ left: trackWidth }, time, function() {
+                if (!raceOver) {
+                    raceOver = true;
+                    $('#winner').html('🏆 ' + $('#' + carId).attr('alt') + ' wins the race! 🏁');
+                }
+            });
+        });
+
+    });
+
+    $('#stopRace').click(function(){
+        $('#car1, #car2, #car3, #car4').stop();
+        if (!raceOver) {
+            $('#winner').text('⛔ Race Stopped!');
+            raceOver = true;
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

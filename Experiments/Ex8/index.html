@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Cricket Scoreboard (No PHP)</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #scoreboard {
+      width: 300px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #000;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+    button {
+      margin: 10px 5px;
+      padding: 10px 15px;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">🏏 Cricket Scoreboard</h2>
+
+<div id="scoreboard">
+  <!-- Score will load here -->
+</div>
+
+<div style="text-align:center;">
+  <button id="addRun">Add Run</button>
+  <button id="addWicket">Add Wicket</button>
+  <button id="addOver">Add Over</button>
+  <button id="reset">Reset</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

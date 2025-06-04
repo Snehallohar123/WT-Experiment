@@ -1,0 +1,21 @@
+<!-- fileloader.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploader</title>
+</head>
+<body>
+
+    <h1>Upload a File</h1>
+
+    <form action="upload_file.php" method="POST" enctype="multipart/form-data">
+        <label for="fileUpload">Choose an image to upload:</label>
+        <input type="file" name="fileUpload" id="fileUpload" accept=".gif, .jpeg, .pjpeg" required>
+        <br><br>
+        <input type="submit" value="Upload File">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adhar Card</title>
+	<style>
+		/* *{
+			padding: 0;
+			margin: 0;
+		} */
+		.adhar {
+			width: 500px;
+			height: 350px;
+			border: 2px solid black;
+			line-height: 2px;
+			margin: auto;
+		}
+		h1,h2,h4{
+			text-align: center;
+		}
+		.head img:first-child{
+			width:50px;
+			height: 50px;
+			margin-top: 2px;
+			margin-left: -10px;
+		}
+		.head img:nth-child(3){
+			width: 70px;
+			height: 70px;
+			margin-top: 2px;
+		}
+		.head{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+		}
+		
+		.adhar h3:first-child{
+			text-align: center;
+			width: 250px;
+			margin: 5px;
+			/* margin-left: 20%; */
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: orangered;
+			border-radius: 8px;
+		}
+		.adhar h3:nth-child(2){
+			text-align: center;
+			width: 250px;
+			margin: 5px;
+			/* margin-left: 20%; */
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: green;
+			/* border-top-left-radius: 50%;
+			border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 50%; */
+			border-radius: 8px;
+		}
+		.container img{
+			width: 150px;
+			height: 150px;
+			border: 1px solid black;
+		}
+		.container{
+			display: flex;
+			justify-content: space-around;
+			line-height: 2.5px;
+			margin: auto;
+		}
+		.item{
+			display: flex;
+			flex-direction: column;
+		}
+		hr{
+			color: red;
+			background-color: red;
+		}
+		.last{
+			padding-top: 25px;
+		}
+		h1 span{
+			color: red;
+		}
+		.line{
+			width: 100%;
+			height: 3px;
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="adhar">
+		
+		<div class="head">
+			<img src="sjLogo.jpg" alt="">
+			<div>
+				<h3>भारत सरकार</h3>
+				<h3>Goverment of India</h3>
+			</div>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxvuzxekeGukuKN9DsQ857l12NQJmUdVJkbQ&s" alt="">
+		</div>
+		
+		<div class="container"> 
+			<img src="Myphoto.jpeg" alt="photo">
+			<div class="item">
+				<p>श्रुती महादेव पाटील</p>
+			<p>Shruti Mahadev Patil</p>
+			<p>जन्मतारीख/DOB:13/05/2004</p>
+			<p>महिला/FEMALE</p>
+			</div>
+		</div>
+
+		<div>
+			<h2>2608 9868 5787</h2>
+			<h4>VID:9136 3753 0796 0380</h4>
+		</div>
+		<div class="line"></div>
+		<h1 id="last">माझा <span>आधार</span>, माझी ओळख</h1>
+	</div>
+</body>
+
+</html>
